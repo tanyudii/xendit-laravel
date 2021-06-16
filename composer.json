@@ -1,0 +1,42 @@
+{
+    "name": "tanyudii/xendit-laravel",
+    "description": "The wrapper xendit api for Laravel PHP Framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yudi Hertanto",
+            "email": "y.hertanto17@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-curl": "*",
+        "ext-json": "*",
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8",
+        "xendit/xendit-php": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tanyudii\\XenditLaravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tanyudii\\XenditLaravel\\Tests\\": "src/Tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Tanyudii\\XenditLaravel\\XenditLaravelServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
