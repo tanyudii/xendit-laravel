@@ -1,2 +1,2 @@
-# xendit-laravel
-The wrapper xendit for Laravel PHP Framework
+# Xendit Laravel
+The wrapper Xendit for Laravel PHP Framework
