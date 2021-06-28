@@ -15,6 +15,6 @@ class XenditService extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'xendit-laravel';
+        return 'xendit-service';
     }
 }

@@ -18,7 +18,7 @@ class XenditLaravelServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . "/../config/xendit-laravel.php", "xendit-laravel");
 
-        $this->app->bind("laratok-shop-service", function () {
+        $this->app->bind("xendit-service", function () {
             return new XenditService;
         });
 
