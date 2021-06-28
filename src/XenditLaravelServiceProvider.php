@@ -35,7 +35,7 @@ class XenditLaravelServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes(
                 [
-                    __DIR__ . "/../assets/xendit-laravel.php" => config_path(
+                    __DIR__ . "/../config/xendit-laravel.php" => config_path(
                         "xendit-laravel.php"
                     ),
                 ],
