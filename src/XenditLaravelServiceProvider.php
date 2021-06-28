@@ -16,14 +16,13 @@ class XenditLaravelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->alias('xendit-laravel', XenditService::class);
-        $this->app->singleton('xendit-laravel', function () {
+        $this->mergeConfigFrom(__DIR__ . "/../config/xendit-laravel.php", "xendit-laravel");
+
+        $this->app->bind("laratok-shop-service", function () {
             return new XenditService;
         });
 
-        $this->registerPublishing();
-
-        $this->registerMiddleware();
+        $this->app['router']->aliasMiddleware('xendit-server', EnsureXenditServer::class);
     }
 
     /**
@@ -33,31 +32,15 @@ class XenditLaravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-    }
-
-    /**
-     * Register the package's publishable resources.
-     *
-     * @return void
-     */
-    private function registerPublishing()
-    {
         if ($this->app->runningInConsole()) {
-            // Lumen lacks a config_path() helper, so we use base_path()
-            $this->publishes([
-                __DIR__.'/../config/xendit-laravel.php' => base_path('config/xendit-laravel.php'),
-            ], 'laravel-xendit-config');
+            $this->publishes(
+                [
+                    __DIR__ . "/../assets/xendit-laravel.php" => config_path(
+                        "xendit-laravel.php"
+                    ),
+                ],
+                "xendit-laravel-config"
+            );
         }
-    }
-
-    /**
-     * Register the package's publishable resources.
-     *
-     * @return void
-     */
-    private function registerMiddleware()
-    {
-        $this->app['router']->aliasMiddleware('xendit-server', EnsureXenditServer::class);
     }
 }
