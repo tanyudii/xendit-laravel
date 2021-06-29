@@ -1,6 +1,6 @@
 <?php
 
-namespace Tanyudii\XenditLaravel;
+namespace Tanyudii\XenditLaravel\Exceptions;
 
 class XenditLaravelException extends \Exception
 {
