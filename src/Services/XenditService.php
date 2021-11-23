@@ -6,6 +6,7 @@ use Xendit\Cards;
 use Xendit\EWallets;
 use Xendit\Exceptions\ApiException;
 use Xendit\Invoice;
+use Xendit\VirtualAccounts;
 use Xendit\Xendit;
 
 class XenditService
@@ -31,6 +32,15 @@ class XenditService
     public function getInvoice(string $id)
     {
         return Invoice::retrieve($id);
+    }
+
+    /**
+     * @param array $params
+     * @return array
+     */
+    public function createVirtualAccount(array $params)
+    {
+        return VirtualAccounts::create($params);
     }
 
     /**

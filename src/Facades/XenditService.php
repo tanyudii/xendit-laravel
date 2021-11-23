@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static mixed createInvoice(array $params)
  * @method static mixed getInvoice(string $id)
+ * @method static mixed createVirtualAccount(array $params)
  * @method static mixed createEWalletCharge(array $params)
  * @method static mixed createCreditDebitCardCharge(array $params)
  *
