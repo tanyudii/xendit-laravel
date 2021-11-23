@@ -25,6 +25,15 @@ class XenditService
     }
 
     /**
+     * @param string $id
+     * @return array
+     */
+    public function getInvoice(string $id)
+    {
+        return Invoice::retrieve($id);
+    }
+
+    /**
      * @param array $params
      * @return array
      * @throws ApiException
